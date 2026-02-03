@@ -15,17 +15,22 @@ const DonateSection = () => {
   };
 
   return (
-    <section id="donate" className="py-20 px-4 bg-background">
-      <div className="max-w-5xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
+    <section id="donate" className="py-24 px-4 bg-background relative">
+      <div className="section-divider absolute top-0 left-0 right-0" />
+      
+      {/* Background decoration */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/3 rounded-full blur-3xl pointer-events-none" />
+      
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <div className="urgent-badge mb-4">
             <Heart className="w-4 h-4 animate-heartbeat" />
             Make a Difference
           </div>
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
-            Help Save Oreo
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 tracking-tight">
+            Help Save <span className="text-gradient">Oreo</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
             Every contribution, no matter how small, brings Oreo one step closer to recovery. 
             Choose your preferred method below.
           </p>
@@ -34,55 +39,55 @@ const DonateSection = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* UPI Section */}
           <div className="qr-card text-center">
-            <div className="tag-india mb-4">
+            <div className="tag-india mb-6">
               🇮🇳 India (UPI)
             </div>
-            <h3 className="font-display text-2xl font-bold mb-4">Pay via UPI</h3>
+            <h3 className="font-display text-2xl font-bold mb-6">Pay via UPI</h3>
             
-            <div className="bg-card rounded-xl p-4 mb-4 inline-block shadow-inner border border-border">
+            <div className="bg-white rounded-2xl p-5 mb-6 inline-block shadow-inner border border-border/30">
               <img 
                 src={upiQR} 
                 alt="UPI QR Code" 
-                className="w-56 h-56 object-contain mx-auto"
+                className="w-52 h-52 object-contain mx-auto"
               />
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-4">
               <p className="text-sm text-muted-foreground">Or copy UPI ID:</p>
-              <div className="flex items-center justify-center gap-2">
-                <code className="bg-muted px-4 py-2 rounded-lg font-mono text-sm">
+              <div className="flex items-center justify-center gap-3">
+                <code className="bg-muted/80 px-5 py-2.5 rounded-xl font-mono text-sm border border-border/50">
                   {upiId}
                 </code>
                 <button 
                   onClick={copyUPI}
-                  className="p-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
+                  className="p-2.5 rounded-xl bg-primary/10 hover:bg-primary/20 text-primary transition-all duration-200 hover:scale-105"
                   title="Copy UPI ID"
                 >
-                  {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                  {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
                 </button>
               </div>
               {copied && (
-                <p className="text-primary text-sm font-medium">Copied to clipboard!</p>
+                <p className="text-primary text-sm font-medium animate-fade-in">✓ Copied to clipboard!</p>
               )}
             </div>
           </div>
 
           {/* PayPal Section */}
           <div className="qr-card text-center">
-            <div className="tag-international mb-4">
+            <div className="tag-international mb-6">
               🌍 International (PayPal)
             </div>
-            <h3 className="font-display text-2xl font-bold mb-4">Pay via PayPal</h3>
+            <h3 className="font-display text-2xl font-bold mb-6">Pay via PayPal</h3>
             
-            <div className="bg-card rounded-xl p-4 mb-4 inline-block shadow-inner border border-border">
+            <div className="bg-white rounded-2xl p-5 mb-6 inline-block shadow-inner border border-border/30">
               <img 
                 src={paypalQR} 
                 alt="PayPal QR Code" 
-                className="w-56 h-56 object-contain mx-auto"
+                className="w-52 h-52 object-contain mx-auto"
               />
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-4">
               <p className="text-sm text-muted-foreground">Or use the link:</p>
               <a 
                 href={paypalLink}
@@ -97,16 +102,16 @@ const DonateSection = () => {
           </div>
         </div>
 
-        <div className="mt-12 text-center">
-          <div className="card-warm max-w-2xl mx-auto p-6">
-            <p className="text-lg font-display font-semibold mb-2">
+        <div className="mt-16 text-center">
+          <div className="card-warm max-w-2xl mx-auto p-8">
+            <p className="text-xl font-display font-bold mb-3 text-gradient-gold">
               Every ₹1 Helps 🙏
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               If you cannot donate, please share this page with someone who can. 
               Your share could save Oreo's life.
             </p>
-            <div className="flex flex-wrap justify-center gap-3 mt-4">
+            <div className="flex flex-wrap justify-center gap-3">
               <a 
                 href={`https://twitter.com/intent/tweet?text=Please%20help%20save%20Oreo%20the%20cat!%20She's%20fighting%20for%20her%20life.&url=${encodeURIComponent(window.location.href)}`}
                 target="_blank"
