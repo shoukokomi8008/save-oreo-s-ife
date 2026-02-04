@@ -1,6 +1,6 @@
 import { Heart, Copy, ExternalLink, Check, FileText } from "lucide-react";
 import { useState } from "react";
-import upiQR from "@/assets/upi-qr.png";
+import bharatpeQR from "@/assets/bharatpe-qr.jpeg";
 import paypalQR from "@/assets/paypal-qr.png";
 
 const kettoLink = "https://www.ketto.org/fundraiser/offer-a-helping-hand-to-support-oreos-treatment-1112171?utm_medium=copy&shby=1&utm_source=internal&utm_campaign=offer-a-helping-hand-to-support-oreos-treatment-1112171";
@@ -8,7 +8,7 @@ const medicalDocsLink = "https://drive.google.com/drive/folders/18S_H1lKaKcqVNjb
 
 const DonateSection = () => {
   const [copied, setCopied] = useState(false);
-  const upiId = "saveoreo@airtel";
+  const upiId = "BHARATPE.8G0Y0B7H9S51718@fbpe";
   const paypalLink = "https://www.paypal.com/ncp/payment/NZ9Y8VYH97KK4";
 
   const copyUPI = () => {
@@ -49,8 +49,8 @@ const DonateSection = () => {
             
             <div className="bg-white rounded-2xl p-4 mb-4 inline-block shadow-inner border border-border/30">
               <img 
-                src={upiQR} 
-                alt="UPI QR Code" 
+                src={bharatpeQR} 
+                alt="BharatPe UPI QR Code" 
                 className="w-40 h-40 object-contain mx-auto"
               />
             </div>
