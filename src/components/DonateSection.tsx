@@ -1,20 +1,29 @@
 import { Heart, Copy, ExternalLink, Check, FileText } from "lucide-react";
 import { useState } from "react";
 import bharatpeQR from "@/assets/bharatpe-qr.jpeg";
+import jioQR from "@/assets/jio-qr.jpeg";
 import paypalQR from "@/assets/paypal-qr.png";
 
 const kettoLink = "https://www.ketto.org/fundraiser/offer-a-helping-hand-to-support-oreos-treatment-1112171?utm_medium=copy&shby=1&utm_source=internal&utm_campaign=offer-a-helping-hand-to-support-oreos-treatment-1112171";
 const medicalDocsLink = "https://drive.google.com/drive/folders/18S_H1lKaKcqVNjbccJL3Ihqb8-MAGCsr";
 
 const DonateSection = () => {
-  const [copied, setCopied] = useState(false);
-  const upiId = "BHARATPE.8G0Y0B7H9S51718@fbpe";
+  const [copiedBharatpe, setCopiedBharatpe] = useState(false);
+  const [copiedJio, setCopiedJio] = useState(false);
+  const bharatpeUpiId = "BHARATPE.8G0Y0B7H9S51718@fbpe";
+  const jioUpiId = "saveoreo@jio";
   const paypalLink = "https://www.paypal.com/ncp/payment/NZ9Y8VYH97KK4";
 
-  const copyUPI = () => {
-    navigator.clipboard.writeText(upiId);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const copyBharatpeUPI = () => {
+    navigator.clipboard.writeText(bharatpeUpiId);
+    setCopiedBharatpe(true);
+    setTimeout(() => setCopiedBharatpe(false), 2000);
+  };
+
+  const copyJioUPI = () => {
+    navigator.clipboard.writeText(jioUpiId);
+    setCopiedJio(true);
+    setTimeout(() => setCopiedJio(false), 2000);
   };
 
   return (
@@ -39,13 +48,13 @@ const DonateSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {/* UPI Section */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {/* BharatPe UPI Section */}
           <div className="qr-card text-center">
             <div className="tag-india mb-4">
-              🇮🇳 India (UPI)
+              🇮🇳 BharatPe UPI
             </div>
-            <h3 className="font-display text-xl font-bold mb-4">Pay via UPI</h3>
+            <h3 className="font-display text-xl font-bold mb-4">BharatPe</h3>
             
             <div className="bg-white rounded-2xl p-4 mb-4 inline-block shadow-inner border border-border/30">
               <img 
@@ -58,18 +67,53 @@ const DonateSection = () => {
             <div className="space-y-3">
               <p className="text-xs text-muted-foreground">Or copy UPI ID:</p>
               <div className="flex items-center justify-center gap-2">
-                <code className="bg-muted/80 px-3 py-2 rounded-lg font-mono text-xs border border-border/50">
-                  {upiId}
+                <code className="bg-muted/80 px-2 py-2 rounded-lg font-mono text-[10px] border border-border/50 break-all">
+                  {bharatpeUpiId}
                 </code>
                 <button 
-                  onClick={copyUPI}
+                  onClick={copyBharatpeUPI}
                   className="p-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-all duration-200 hover:scale-105"
                   title="Copy UPI ID"
                 >
-                  {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                  {copiedBharatpe ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
-              {copied && (
+              {copiedBharatpe && (
+                <p className="text-primary text-xs font-medium animate-fade-in">✓ Copied!</p>
+              )}
+            </div>
+          </div>
+
+          {/* Jio UPI Section */}
+          <div className="qr-card text-center">
+            <div className="tag-india mb-4">
+              🇮🇳 Jio UPI
+            </div>
+            <h3 className="font-display text-xl font-bold mb-4">JioFinance</h3>
+            
+            <div className="bg-white rounded-2xl p-4 mb-4 inline-block shadow-inner border border-border/30">
+              <img 
+                src={jioQR} 
+                alt="Jio Finance UPI QR Code" 
+                className="w-40 h-40 object-contain mx-auto"
+              />
+            </div>
+
+            <div className="space-y-3">
+              <p className="text-xs text-muted-foreground">Or copy UPI ID:</p>
+              <div className="flex items-center justify-center gap-2">
+                <code className="bg-muted/80 px-3 py-2 rounded-lg font-mono text-xs border border-border/50">
+                  {jioUpiId}
+                </code>
+                <button 
+                  onClick={copyJioUPI}
+                  className="p-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-all duration-200 hover:scale-105"
+                  title="Copy UPI ID"
+                >
+                  {copiedJio ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                </button>
+              </div>
+              {copiedJio && (
                 <p className="text-primary text-xs font-medium animate-fade-in">✓ Copied!</p>
               )}
             </div>
