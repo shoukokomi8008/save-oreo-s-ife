@@ -9,7 +9,7 @@ const medicalDocsLink = "https://drive.google.com/drive/folders/18S_H1lKaKcqVNjb
 
 const DonateSection = () => {
   const [copied, setCopied] = useState(false);
-  const upiId = "abhishekxthickasa-1@okicici";
+  const upiId = "saveoreo@jio";
   const paypalLink = "https://www.paypal.com/ncp/payment/NZ9Y8VYH97KK4";
 
   const copyUPI = () => {
