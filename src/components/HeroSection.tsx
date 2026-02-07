@@ -1,4 +1,4 @@
-import { Heart, MessageCircle } from "lucide-react";
+import { Heart } from "lucide-react";
 import oreoImage from "@/assets/oreo-2.jpg";
 
 const HeroSection = () => {
@@ -8,20 +8,6 @@ const HeroSection = () => {
 
   return (
     <section className="hero-gradient min-h-screen flex flex-col px-4 py-16 relative overflow-hidden">
-      {/* Disclaimer Banner */}
-      <div className="w-full bg-accent/10 border border-accent/30 rounded-xl p-4 mb-8 max-w-4xl mx-auto">
-        <div className="flex items-start gap-3">
-          <MessageCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-          <div className="text-sm">
-            <p className="text-foreground/90">
-              <span className="font-semibold">Note:</span> My Reddit account was temporarily banned for posting too frequently, but I won't give up — I've filed an appeal!
-            </p>
-            <p className="text-muted-foreground mt-1">
-              Meanwhile, you can contact me on Telegram: <a href="https://t.me/Abhishek_8008" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">@Abhishek_8008</a>
-            </p>
-          </div>
-        </div>
-      </div>
 
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
