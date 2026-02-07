@@ -1,6 +1,7 @@
 import { Heart, Copy, ExternalLink, Check, FileText } from "lucide-react";
 import { useState } from "react";
-import jioQR from "@/assets/jio-qr.jpeg";
+import personalQR from "@/assets/personal-qr.jpeg";
+import kettoQR from "@/assets/ketto-qr.jpeg";
 import paypalQR from "@/assets/paypal-qr.png";
 
 const kettoLink = "https://www.ketto.org/fundraiser/offer-a-helping-hand-to-support-oreos-treatment-1112171?utm_medium=copy&shby=1&utm_source=internal&utm_campaign=offer-a-helping-hand-to-support-oreos-treatment-1112171";
@@ -8,7 +9,7 @@ const medicalDocsLink = "https://drive.google.com/drive/folders/18S_H1lKaKcqVNjb
 
 const DonateSection = () => {
   const [copied, setCopied] = useState(false);
-  const upiId = "saveoreo@jio";
+  const upiId = "abhishekxthickasa-1@okicici";
   const paypalLink = "https://www.paypal.com/ncp/payment/NZ9Y8VYH97KK4";
 
   const copyUPI = () => {
@@ -49,8 +50,8 @@ const DonateSection = () => {
             
             <div className="bg-white rounded-2xl p-4 mb-4 inline-block shadow-inner border border-border/30">
               <img 
-                src={jioQR} 
-                alt="Jio Finance UPI QR Code" 
+                src={personalQR} 
+                alt="Personal UPI QR Code" 
                 className="w-40 h-40 object-contain mx-auto"
               />
             </div>
@@ -82,11 +83,12 @@ const DonateSection = () => {
             </div>
             <h3 className="font-display text-xl font-bold mb-4">Donate via Ketto</h3>
             
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-2xl p-6 mb-4 flex items-center justify-center min-h-[160px]">
-              <div className="text-center">
-                <div className="text-4xl mb-2">🩺</div>
-                <p className="text-sm text-muted-foreground">Trusted Platform</p>
-              </div>
+            <div className="bg-white rounded-2xl p-4 mb-4 inline-block shadow-inner border border-border/30">
+              <img 
+                src={kettoQR} 
+                alt="Ketto UPI QR Code" 
+                className="w-40 h-40 object-contain mx-auto"
+              />
             </div>
 
             <div className="space-y-3">
