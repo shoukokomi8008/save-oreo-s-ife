@@ -1,5 +1,6 @@
 import { Heart, AlertTriangle, Clock, Shield } from "lucide-react";
 import oreoImage1 from "@/assets/oreo-1.png";
+import currentOreo from "@/assets/current-oreo.jpeg";
 
 const StorySection = () => {
   return (
@@ -28,6 +29,16 @@ const StorySection = () => {
                   alt="Oreo as a kitten" 
                   className="w-full h-auto"
                 />
+              </div>
+              <div className="mt-4 rounded-3xl overflow-hidden shadow-2xl image-glow">
+                <img 
+                  src={currentOreo} 
+                  alt="Oreo's current condition" 
+                  className="w-full h-auto"
+                />
+                <div className="bg-accent/10 border-t border-accent/20 px-4 py-2 text-center">
+                  <p className="text-sm font-semibold text-accent">Current Condition</p>
+                </div>
               </div>
               <div className="mt-8 space-y-3">
                 <div className="flex items-center gap-3 p-4 rounded-2xl card-glass">
